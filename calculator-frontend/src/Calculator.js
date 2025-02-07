@@ -11,6 +11,7 @@ const Calculator = () => {
       axios
         .post("http://localhost:5001/calculate", { expression })
         .then((response) => {
+          console.log("Recieved response with", response.data.result);
           setExpression(response.data.result);
         })
         .catch((error) => {
